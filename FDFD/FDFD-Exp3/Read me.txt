@@ -1,0 +1,37 @@
+FDFD-RIR-Simulator: A High-Order FDM for Room Impulse Response Simulation
+
+
+Project Overview
+This repository contains the MATLAB implementation for the paper: "A High-Order Frequency-Domain Finite-Difference Method for Room Impulse Response Simulation".
+
+The code simulates Room Impulse Response (RIR) based on the high-order Frequency-Domain Finite-Difference method. The simulation solves the Helmholtz equation using a sixth-order compact scheme and integrates several strategies—including a suitable approximation for the source term, grid step-size selection based on an empirical criterion, an efficient matrix update strategy, and a GMRES iterative solver with a relaxed convergence tolerance—to enhance performance and mitigate the pollution effect. Furthermore, the code incorporates realistic frequency-dependent boundary impedances to accurately model acoustic surfaces. This code will generate a complete frequency-domain RIR and visualize the results in both the time and frequency domains.
+
+
+Requirements
+MATLAB R2024a
+
+
+Usage
+Open "run_RIR_simulation.m"  and edit the parameters in this file. Key settings include:
+"room_dims"  Room dimensions in meters.
+"mic_pos"  Microphone position.
+"source_pos"  Sound  source position.
+"fs" Sampling frequency in Hz.
+"h"  Uniform grid step in meters
+"freq_start, freq_end"  The start and end frequencies for the simulation.
+
+
+
+
+Code Structure
+"run_RIR_simulation.m" The main script to run a simulation.
+"assemble_system_matrix_initial.m"  Builds the initial system matrix and its updatable components.
+"assemble_boundary_matrix.m" Efficiently updates the boundary-related parts of the matrix at each frequency step.
+"generate_source_vector.m"  Creates the source vector b for the Ax=b system.
+"plot_rir_results.m"  Visualizes the final results.
+"Z_concre_4000.mat, Z_porous_4000.mat"   Material impedance data files.
+
+
+Author
+Zhibao Li  &  Wenheng Liu (2025.10.12)
+

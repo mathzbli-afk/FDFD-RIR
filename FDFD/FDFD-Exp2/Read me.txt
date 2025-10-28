@@ -1,0 +1,40 @@
+FDFD-Exp2: A High-Order FDM for Room Impulse Response Simulation
+
+
+Project Overview
+This repository contains the MATLAB implementation for Experiment 2 of the paper: "A High-Order Frequency-Domain Finite-Difference Method for Room Impulse Response Simulation". This experiment code demonstrates our method's robustness by showing consistent RIR simulation results across three cases and comparing them with COMSOL results.
+Case1:  \sigma=h,  \epsilon = 1e-8
+Case2:  \sigma =2h,  \epsilon = 1e-8 
+Case2:  \sigma =h,  \epsilon = 1e-4 
+ The simulation is performed from 50-250 Hz with step size $h=0.1$ m. 
+
+
+
+
+Requirements
+MATLAB R2024a
+
+
+Usage
+Open "run_RIR_simulation.m"  and edit the parameters in this file. Key settings include:
+"room_dims"  Room dimensions in meters.
+"mic_pos"  Microphone position.
+"source_pos"  Sound  source position.
+"fs" Sampling frequency in Hz.
+"h"  Uniform grid step in meters
+"freq_start, freq_end"  The start and end frequencies for the simulation.
+
+
+
+
+Code Structure
+"run_RIR_simulation.m" The main script to run a simulation.
+"assemble_system_matrix_initial.m"  Builds the initial system matrix and its updatable components.
+"assemble_boundary_matrix.m" Efficiently updates the boundary-related parts of the matrix at each frequency step.
+"generate_source_vector.m"  Creates the source vector b for the Ax=b system.
+"Z_concre_4000.mat, Z_porous_4000.mat"   Material impedance data files.
+
+
+Author
+Zhibao Li  &  Wenheng Liu (2025.10.12)
+

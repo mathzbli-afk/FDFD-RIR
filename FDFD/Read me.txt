@@ -1,0 +1,22 @@
+FDFD-RIR-Simulator: A High-Order FDM for Room Impulse Response Simulation
+
+
+Project Overview
+This repository contains the MATLAB implementation for the paper: "A High-Order Frequency-Domain Finite-Difference Method for Room Impulse Response Simulation".
+
+The code simulates Room Impulse Response (RIR) based on the high-order Frequency-Domain Finite-Difference method. The simulation solves the Helmholtz equation using a sixth-order compact scheme and integrates several strategies—including a suitable approximation for the source term, grid step-size selection based on an empirical criterion, an efficient matrix update strategy, and a GMRES iterative solver with a relaxed convergence tolerance—to enhance performance and mitigate the pollution effect. Furthermore, the code incorporates realistic frequency-dependent boundary impedances to accurately model acoustic surfaces. 
+
+
+Requirements
+MATLAB R2024a
+
+
+Usage
+FDFD-Exp1: The code in this folder demonstrates the consistency of the frequency-domain RIR results under two different source models.
+FDFD-Exp2: The code in this folder shows the frequency-domain RIR results under three cases, demonstrating the algorithm's robustness to parameter selection.
+FDFD-Exp3: The code in this folder generates both the frequency-domain RIR and the time-domain RIR.
+
+
+Author
+Zhibao Li  &  Wenheng Liu (2025.10.12)
+
